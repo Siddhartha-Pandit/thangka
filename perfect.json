@@ -1,0 +1,2373 @@
+{
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 6
+      },
+      "id": 628,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Number Of Requests To Unified Api",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "dark-blue",
+                "mode": "fixed"
+              },
+              "mappings": [],
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "sishort"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 2,
+            "x": 0,
+            "y": 4577
+          },
+          "id": 629,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "sum(floor(increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])))",
+              "instant": true,
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Total Requests",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "transparent",
+                "mode": "fixed"
+              },
+              "mappings": [],
+              "noValue": "Status Code",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 1,
+            "w": 10,
+            "x": 2,
+            "y": 4577
+          },
+          "id": 630,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "refId": "A"
+            }
+          ],
+          "title": "",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Downstream=Infra(network)+OnPrem",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "transparent",
+                "mode": "fixed"
+              },
+              "mappings": [],
+              "noValue": "Latency",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 1,
+            "w": 12,
+            "x": 12,
+            "y": 4577
+          },
+          "id": 640,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "refId": "A"
+            }
+          ],
+          "title": "",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "OK:Successful Requests",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "green",
+                "mode": "fixed"
+              },
+              "mappings": [],
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "sishort"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 2,
+            "x": 2,
+            "y": 4578
+          },
+          "id": 631,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "value",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "sum(floor(increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=\"200\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])))",
+              "instant": true,
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "200",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "All 4xx errors",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "dark-red",
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "orange",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "sishort"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 3,
+            "x": 4,
+            "y": 4578
+          },
+          "id": 632,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "sum(floor(increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=~\"4..\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])))",
+              "instant": true,
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "4xx",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "All 5XX Errors",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "dark-red",
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "sishort"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 5,
+            "x": 7,
+            "y": 4578
+          },
+          "id": 635,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "sum(floor(increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=~\"5..\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])))",
+              "instant": true,
+              "range": false,
+              "refId": "B"
+            }
+          ],
+          "title": "5XX",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "green",
+                "mode": "fixed"
+              },
+              "decimals": 3,
+              "mappings": [
+                {
+                  "options": {
+                    "NaN": {
+                      "index": 0,
+                      "text": "No Data"
+                    }
+                  },
+                  "type": "value"
+                }
+              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "UAPI+Downstream"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "UnifiedAPI+Downstream"
+                  },
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "purple",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "sum(increase(uapi_pq27_request_latency_seconds_sum{app=\"unified-api\",namespace=\"unifiedapi-dev\"}[10800s]))/sum(increase(uapi_pq27_request_latency_seconds_count{app=\"unified-api\",namespace=\"unifiedapi-dev\"}[10800s]))"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Downstream"
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 12,
+            "y": 4578
+          },
+          "id": 641,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "sum(increase(uapi_request_latency_seconds_sum{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range]))/sum(increase(uapi_request_latency_seconds_count{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range]))",
+              "instant": true,
+              "legendFormat": "UAPI+Downstream",
+              "range": false,
+              "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "sum(increase(uapi_cloudpq27_request_latency_seconds_sum{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range]))/sum(increase(uapi_cloudpq27_request_latency_seconds_count{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range]))",
+              "instant": true,
+              "legendFormat": "Database",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Average",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "green",
+                "mode": "fixed"
+              },
+              "decimals": 3,
+              "mappings": [
+                {
+                  "options": {
+                    "NaN": {
+                      "index": 0,
+                      "text": "No Data"
+                    }
+                  },
+                  "type": "value"
+                }
+              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "UAPI+Downstream"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "semi-dark-purple",
+                      "mode": "fixed"
+                    }
+                  },
+                  {
+                    "id": "displayName",
+                    "value": "UnifiedAPI+Downstream"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Downstream"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Downstream"
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 16,
+            "y": 4578
+          },
+          "id": 642,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "min(min_over_time(uapi:total_request_latency_seconds:min{app=\"unified-api\",namespace=\"$namespace\",consumerhandler=\"CLOUDINTERMODAL\"}[$__range]))",
+              "instant": true,
+              "legendFormat": "UAPI+Downstream",
+              "range": false,
+              "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "min(min_over_time(uapi:cloudpq27_database_latency_seconds:min{app=\"unified-api\",namespace=\"$namespace\"}[$__range]))",
+              "instant": true,
+              "legendFormat": "Database",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "MIN(Including 403 status code)",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "green",
+                "mode": "fixed"
+              },
+              "decimals": 3,
+              "mappings": [
+                {
+                  "options": {
+                    "NaN": {
+                      "index": 0,
+                      "text": "No Data"
+                    }
+                  },
+                  "type": "value"
+                }
+              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "UAPI+Downstream"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "semi-dark-purple",
+                      "mode": "fixed"
+                    }
+                  },
+                  {
+                    "id": "displayName",
+                    "value": "UnifiedAPI+Downstream"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Downstream"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Downstream"
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 20,
+            "y": 4578
+          },
+          "id": 643,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "max(max_over_time(uapi:total_request_latency_seconds:max{app=\"unified-api\",namespace=\"$namespace\",consumerhandler=\"CLOUDINTERMODAL\"}[$__range]))",
+              "instant": true,
+              "legendFormat": "UAPI+Downstream",
+              "range": false,
+              "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "max(max_over_time(uapi:cloudpq27_database_latency_seconds:max{app=\"unified-api\",namespace=\"$namespace\"}[$__range]))",
+              "instant": true,
+              "legendFormat": "Database",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "MAX",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "BadRequest:Incorrect Request Body",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "dark-red",
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "orange",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "sishort"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 3,
+            "x": 4,
+            "y": 4580
+          },
+          "id": 633,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "sum(floor(increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=\"400\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])))",
+              "instant": true,
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "400",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Internal Server Error",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "dark-red",
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "sishort"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 2,
+            "x": 7,
+            "y": 4580
+          },
+          "id": 636,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "sum(floor(increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=\"500\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])))",
+              "instant": true,
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "500",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Bad Gateway",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "dark-red",
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "sishort"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 3,
+            "x": 9,
+            "y": 4580
+          },
+          "id": 637,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "sum(floor(increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=\"502\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])))",
+              "instant": true,
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "502",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "BadRequest:Incorrect Request Body",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "dark-red",
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "orange",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "sishort"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 3,
+            "x": 4,
+            "y": 4582
+          },
+          "id": 652,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "sum(floor(increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=\"403\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])))",
+              "instant": true,
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "403",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "default": false,
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Bad Gateway",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "dark-red",
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "sishort"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 5,
+            "x": 7,
+            "y": 4582
+          },
+          "id": 654,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "sum(floor(increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=\"503\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])))",
+              "instant": true,
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "503",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "green",
+                "mode": "fixed"
+              },
+              "decimals": 3,
+              "mappings": [
+                {
+                  "options": {
+                    "NaN": {
+                      "index": 0,
+                      "text": "No Data"
+                    }
+                  },
+                  "type": "value"
+                }
+              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "UAPI+Downstream"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "semi-dark-purple",
+                      "mode": "fixed"
+                    }
+                  },
+                  {
+                    "id": "displayName",
+                    "value": "UnifiedAPI+Downstream"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Downstream"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Downstream"
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 12,
+            "y": 4582
+          },
+          "id": 644,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "histogram_quantile(0.9, sum(rate(uapi_request_latency_seconds_bucket{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])) by (le))",
+              "instant": true,
+              "legendFormat": "UAPI+Downstream",
+              "range": false,
+              "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "histogram_quantile(0.9, sum(rate(uapi_cloudpq27_request_latency_seconds_bucket{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])) by (le))",
+              "instant": true,
+              "legendFormat": "Database",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "P90",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "green",
+                "mode": "fixed"
+              },
+              "decimals": 3,
+              "mappings": [
+                {
+                  "options": {
+                    "NaN": {
+                      "index": 0,
+                      "text": "No Data"
+                    }
+                  },
+                  "type": "value"
+                }
+              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "UAPI+Downstream"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "semi-dark-purple",
+                      "mode": "fixed"
+                    }
+                  },
+                  {
+                    "id": "displayName",
+                    "value": "UnifiedAPI+Downstream"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Downstream"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Downstream"
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 16,
+            "y": 4582
+          },
+          "id": 645,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "histogram_quantile(0.95, sum(rate(uapi_request_latency_seconds_bucket{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])) by (le))",
+              "instant": true,
+              "legendFormat": "UAPI+Downstream",
+              "range": false,
+              "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "histogram_quantile(0.95, sum(rate(uapi_cloudpq27_request_latency_seconds_bucket{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])) by (le))",
+              "instant": true,
+              "legendFormat": "Database",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "P95",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "green",
+                "mode": "fixed"
+              },
+              "decimals": 3,
+              "mappings": [
+                {
+                  "options": {
+                    "NaN": {
+                      "index": 0,
+                      "text": "No Data"
+                    }
+                  },
+                  "type": "value"
+                }
+              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "UAPI+Downstream"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "semi-dark-purple",
+                      "mode": "fixed"
+                    }
+                  },
+                  {
+                    "id": "displayName",
+                    "value": "UnifiedAPI+Downstream"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Downstream"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Downstream"
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 20,
+            "y": 4582
+          },
+          "id": 646,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "histogram_quantile(0.99, sum(rate(uapi_request_latency_seconds_bucket{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])) by (le))",
+              "instant": true,
+              "legendFormat": "UAPI+Downstream",
+              "range": false,
+              "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "histogram_quantile(0.99, sum(rate(uapi_cloudpq27_request_latency_seconds_bucket{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])) by (le))",
+              "instant": true,
+              "legendFormat": "Database",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "P99",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "BadRequest:Incorrect Request Body",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "dark-red",
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "orange",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "sishort"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 3,
+            "x": 4,
+            "y": 4584
+          },
+          "id": 653,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "sum(floor(increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=\"422\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])))",
+              "instant": true,
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "422",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Bad Gateway",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "dark-red",
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "sishort"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 5,
+            "x": 7,
+            "y": 4584
+          },
+          "id": 707,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "sum(floor(increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=\"504\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range])))",
+              "instant": true,
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "504",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "blue",
+                "mode": "fixed"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "bars",
+                "fillOpacity": 72,
+                "gradientMode": "hue",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "smooth",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 0,
+            "y": 4586
+          },
+          "id": 647,
+          "interval": "1m",
+          "maxDataPoints": 100,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(floor((increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__rate_interval])))) > 0",
+              "legendFormat": "Requests",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Requests",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "blue",
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "bars",
+                "fillOpacity": 72,
+                "gradientMode": "hue",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "200"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "green",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "400"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "yellow",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "422"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "super-light-yellow",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "500"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "dark-red",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "502"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "light-red",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "504"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "super-light-red",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 12,
+            "y": 4586
+          },
+          "id": 648,
+          "interval": "1m",
+          "maxDataPoints": 100,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(floor((increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=\"200\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__rate_interval])))) > 0",
+              "legendFormat": "200",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(floor((increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=\"400\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__rate_interval])))) > 0",
+              "hide": false,
+              "legendFormat": "400",
+              "range": true,
+              "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(floor((increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=\"422\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__rate_interval])))) > 0",
+              "hide": false,
+              "legendFormat": "422",
+              "range": true,
+              "refId": "C"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(floor((increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=\"500\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__rate_interval])))) > 0",
+              "hide": false,
+              "legendFormat": "500",
+              "range": true,
+              "refId": "D"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(floor((increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=\"502\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__rate_interval])))) > 0",
+              "hide": false,
+              "legendFormat": "502",
+              "range": true,
+              "refId": "E"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(floor((increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",statusCode=\"504\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__rate_interval])))) > 0",
+              "hide": false,
+              "legendFormat": "504",
+              "range": true,
+              "refId": "F"
+            }
+          ],
+          "title": "Response Status",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "default": false,
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "green",
+                "mode": "fixed"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "UAPI"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "green",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Database"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "blue",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "__systemRef": "hideSeriesFrom",
+                "matcher": {
+                  "id": "byNames",
+                  "options": {
+                    "mode": "exclude",
+                    "names": [
+                      "Database"
+                    ],
+                    "prefix": "All except:",
+                    "readOnly": true
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": true
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 24,
+            "x": 0,
+            "y": 4593
+          },
+          "id": 649,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "11.6.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(rate(uapi_request_latency_seconds_sum{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__rate_interval]))/sum(rate(uapi_request_latency_seconds_count{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__rate_interval]))",
+              "legendFormat": "Total",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(increase(uapi_cloudpq27_request_latency_seconds_sum{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__rate_interval]))/sum(increase(uapi_cloudpq27_request_latency_seconds_count{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__rate_interval]))",
+              "hide": false,
+              "instant": false,
+              "legendFormat": "Database",
+              "range": true,
+              "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(increase(uapi_dynamic_request_total_latency_seconds_sum{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"(svd-prod-northeurope-1|svd-prod-westeurope-1)\",downstreamHandler=\"PQ27\"}[$__rate_interval]))/sum(increase(uapi_dynamic_request_total_latency_seconds_count{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"(svd-prod-northeurope-1|svd-prod-westeurope-1)\",downstreamHandler=\"PQ27\"}[$__rate_interval]))",
+              "hide": false,
+              "instant": false,
+              "legendFormat": "Dynamic",
+              "range": true,
+              "refId": "C"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(increase(uapi_olyc_request_latency_seconds_sum{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"(svd-prod-northeurope-1|svd-prod-westeurope-1)\",downstreamHandler=\"PQ27\"}[$__rate_interval]))/sum(increase(uapi_olyc_request_latency_seconds_count{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"(svd-prod-northeurope-1|svd-prod-westeurope-1)\",downstreamHandler=\"PQ27\"}[$__rate_interval]))",
+              "hide": false,
+              "instant": false,
+              "legendFormat": "Cost",
+              "range": true,
+              "refId": "D"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(increase(uapi_route_code_request_latency_seconds_sum{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"(svd-prod-northeurope-1|svd-prod-westeurope-1)\",downstreamHandler=\"PQ27\"}[$__rate_interval]))/sum(increase(uapi_route_code_request_latency_seconds_count{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"(svd-prod-northeurope-1|svd-prod-westeurope-1)\",downstreamHandler=\"PQ27\"}[$__rate_interval]))",
+              "hide": false,
+              "instant": false,
+              "legendFormat": "RouteCode",
+              "range": true,
+              "refId": "E"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(increase(uapi_sailing_leg_request_latency_seconds_sum{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"(svd-prod-northeurope-1|svd-prod-westeurope-1)\",downstreamHandler=\"PQ27\"}[$__rate_interval]))/sum(increase(uapi_sailing_leg_request_latency_seconds_count{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"(svd-prod-northeurope-1|svd-prod-westeurope-1)\",downstreamHandler=\"PQ27\"}[$__rate_interval]))",
+              "hide": false,
+              "instant": false,
+              "legendFormat": "SailingLeg",
+              "range": true,
+              "refId": "F"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(increase(uapi_capacity_utilisation_request_latency_seconds_sum{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"(svd-prod-northeurope-1|svd-prod-westeurope-1)\",downstreamHandler=\"PQ27\"}[$__rate_interval]))/sum(increase(uapi_capacity_utilisation_request_latency_seconds_count{app=\"unified-api\",namespace=\"$namespace\",container=\"unified-api\",k8s_cluster=~\"(svd-prod-northeurope-1|svd-prod-westeurope-1)\",downstreamHandler=\"PQ27\"}[$__rate_interval]))",
+              "hide": false,
+              "instant": false,
+              "legendFormat": "CapacityUtilisation",
+              "range": true,
+              "refId": "G"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "sum(rate(uapi_request_latency_seconds_sum{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"PQ27\",container=\"unified-api\",k8s_cluster=~\"$cluster\", IsIntegratedRequest=\"True\"}[$__rate_interval]))/sum(rate(uapi_request_latency_seconds_count{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"PQ27\",container=\"unified-api\",k8s_cluster=~\"$cluster\", IsIntegratedRequest=\"True\"}[$__rate_interval]))",
+              "hide": false,
+              "instant": false,
+              "legendFormat": "UAPI_Integrated",
+              "range": true,
+              "refId": "H"
+            }
+          ],
+          "title": "Average Latency",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Routing API Dev Team",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "yellow",
+                "mode": "fixed"
+              },
+              "mappings": [],
+              "noValue": "No Data",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "sishort"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 24,
+            "x": 0,
+            "y": 4599
+          },
+          "id": 650,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": true
+            },
+            "showPercentChange": false,
+            "textMode": "value_and_name",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.6.1+security-01",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "sum(floor(increase(uapi_requests_count_total{app=\"unified-api\",namespace=\"$namespace\",downstreamHandler=\"CLOUDINTERMODAL\",container=\"unified-api\",k8s_cluster=~\"$cluster\"}[$__range]))) by (consumerName) > 0",
+              "hide": false,
+              "instant": true,
+              "legendFormat": "__auto",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Consumer Hits",
+          "type": "stat"
+        }
+      ],
+      "title": "CloudIntermodal Requests",
+      "type": "row"
+    },

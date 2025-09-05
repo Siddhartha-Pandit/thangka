@@ -4,8 +4,6 @@
             box-sizing: border-box;
         }
 
-      
-
         /* Hero Section */
         .hero-wrapper {
             width: 100%;
@@ -14,15 +12,20 @@
         }
 
         .hero {
-            height: calc(100vh - 63px);
-            background: url("./images/heroimage.jpg");
+            height: 100vh;
+            background: 
+  linear-gradient(to bottom, rgba(255, 0, 0, 0.25) 0%, rgba(255, 0, 0, 0) 20%), /* stronger + longer red tint */
+  linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.5)), /* dark overlay */
+  url("https://cdn.pixabay.com/photo/2020/10/06/12/16/kuthodaw-pagoda-5632067_1280.jpg");
+  background-size: cover;
+  background-position: center;
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            color: #F5F5F5;
             position: relative;
 
         }
@@ -58,10 +61,12 @@
         }
 
         .btn-secondary {
-            background: transparent;
-            color: white;
+            background: rgb(211, 206, 206);
+            color: black;
             padding: 12px 30px;
-            border: 2px solid white;
+            /* border: 2px solid white; */
+            outline: none;
+            border: none;
             border-radius: 25px;
             font-size: 1rem;
             cursor: pointer;
@@ -81,10 +86,12 @@
 
         /* Navigation */
         .navbar {
-            background: #8b1538;
+            background: rgba(132, 2, 2, 0.8);
             padding: 1rem 0;
-            position: sticky;
+            position: fixed;
+            width: 100vw;
             top: 0;
+            cursor: pointer;
             /* bottom: 0; */
             z-index: 100;
         }
@@ -102,8 +109,7 @@
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 4rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -444,3 +450,9 @@
                 display: none;
             }
         }
+
+
+        html{
+            scroll-behavior: smooth;
+        }
+

@@ -1,26 +1,35 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Hero from "./components/Hero.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Categories from "./components/Categories.jsx";
+import Product from "./components/Product.jsx";
+import Story from "./components/Story.jsx";
+import CategorySelector from "./components/CategorySection.jsx";
+import CulturalExchange from "./components/CulturalExchange.jsx";
+import AdminAddProduct from "./components/Admin.jsx";
 
-import './App.css'
-import Hero from './components/Hero'
-import Navbar from './components/Navbar'
-import Categories from './components/Categories'
-import Product from './components/Product'
-import Story from './components/Story'
-import CulturalExchange  from './components/CulturalExchange'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-     <Hero/>
-     <Navbar/>
-     <Categories/>
-     <Product/>
-     <Story/>
-     <CulturalExchange/>
-    </>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <Hero />
+              <Categories />
+              <Product />
+              <Story />
+              <CategorySelector />
+              <CulturalExchange />
+            </>
+          }
+        />
 
-export default App
+        {/* Admin Page ( /admin ) */}
+        <Route path="/admin" element={<AdminAddProduct />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}

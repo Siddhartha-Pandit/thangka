@@ -1,0 +1,69 @@
+
+        .admin-container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  font-family: "Inter", sans-serif;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.admin-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select {
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.2s ease;
+}
+
+.admin-form input:focus,
+.admin-form textarea:focus,
+.admin-form select:focus {
+  border-color: #a52a2a;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(165,42,42,0.1);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-form button {
+  width: 100%;
+  padding: 12px;
+  background: #a52a2a;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.admin-form button:hover {
+  background: #872525;
+}
