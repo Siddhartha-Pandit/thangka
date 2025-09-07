@@ -134,7 +134,10 @@ html {
     flex-wrap: wrap;
     animation: fadeInUp 1s ease-out 0.4s both;
 }
+.product-texy{
+    background-color: #fff;
 
+}
 .btn-primary,
 .btn-secondary {
     padding: 12px 30px;
@@ -273,6 +276,7 @@ html {
     position: absolute;
     top: 10px;
     left: 10px;
+    
     background: #e63946;
     color: #fff;
     font-size: 0.75rem;
@@ -286,6 +290,8 @@ html {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+    background-color: #910000 ;
+  
 }
 
 .product-info h3 {
@@ -508,6 +514,9 @@ footer {
   padding: 1rem 0;
   font-size: 0.85rem;
   color: #ccc;
+}
+#p-text{
+    background-color: #fff !important;
 }
 /* =========================
  Responsive Design

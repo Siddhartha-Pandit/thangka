@@ -41,7 +41,7 @@ export default function ProductPage() {
         </div>
 
         {/* Product Information Section */}
-        <div className="product-info">
+        <div className="product-description">
           <h1 className="product-title">Buddha Thangka Painting</h1>
           <div className="price">$199.99</div>
 

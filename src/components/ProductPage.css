@@ -7,18 +7,14 @@
   --text-color-dark: #333;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: var(--background-color);
-  margin: 0;
-  color: var(--text-color-light);
-}
+
 
 .product-page {
   max-width: 1200px;
   margin: auto;
   margin-top:62px;
   padding: 20px;
+  background-color: #8b1538;
 }
 
 .main-content {
@@ -69,11 +65,11 @@ body {
 
 /* --- Product Info --- */
 .product-info {
+  color: #000;
   flex: 1;
-  background: var(--primary-dark);
+  background: #fff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .product-title {

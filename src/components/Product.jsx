@@ -46,7 +46,7 @@ const Product = () => {
               />
               {product.hot && <span className="hot-badge">🔥 热销</span>}
             </div>
-            <div className="product-info">
+            <div className="product-text" id="p-text">
               <h3 className="product-name">{product.name}</h3>
               <p className="product-desc">{product.desc}</p>
               <div className="product-price-action">
