@@ -1,74 +1,63 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-// Product data
-const productsData = [
-  {
-    name: '喜马拉雅画卷珍品',
-    desc: '艺术风景画作画手工，定制绘画作品',
-    price: '¥9,680',
-    image: './images/thangka/5.jpeg',
-    gradient: 'linear-gradient(rgba(70,130,180,0.2), rgba(135,206,235,0.2))',
-    hot: true,
-  },
-  {
-    name: '铜波可唐卡',
-    desc: '精致手工艺术品, 是您的收藏珍品收藏值得拥有',
-    price: '¥5,880',
-    image: './images/singing_bowl/R.jpeg',
-    gradient: 'linear-gradient(rgba(139,0,0,0.2), rgba(205,92,92,0.2))',
-    hot: true,
-  },
-  {
-    name: '7件套颂钵组合',
-    desc: '喜马拉雅地区手工，配件齐备贴心服务',
-    price: '¥4,280',
-    image: './images/thangka/4.jpeg',
-    gradient: 'linear-gradient(rgba(218,165,32,0.2), rgba(255,215,0,0.2))',
-    hot: true,
-  },
-];
+const Product = () => {
+  const hotProducts = [
+    {
+      name: '喜马拉雅画卷珍品',
+      desc: '艺术风景画作画手工，定制绘画作品',
+      price: '¥9,680',
+      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop',
+      hot: true
+    },
+    {
+      name: '铜制释迦牟尼佛',
+      desc: '纯手工打造铜制释迦牟尼佛像',
+      price: '¥15,800',
+      image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=300&h=300&fit=crop',
+      hot: true
+    },
+    {
+      name: '传统手工颂钵',
+      desc: '纯手工锻造传统西藏颂钵',
+      price: '¥3,800',
+      image: 'https://images.unsplash.com/photo-1582747652946-63e4e52f8a5b?w=300&h=300&fit=crop',
+      hot: true
+    }
+  ];
 
-// Single product card component
-const ProductCard = ({ product }) => {
-  return (
-    <div className="product-card">
-      <div
-        className="product-image"
-        style={{
-          background: `${product.gradient}, url(${product.image})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        {product.hot && <div className="hot-badge">热销</div>}
-      </div>
-      <div className="product-info">
-        <h3 className="product-name">{product.name}</h3>
-        <p className="product-desc">{product.desc}</p>
-        <div className="product-price">
-          <span className="price">{product.price}</span>
-          <button className="add-to-cart">🛒 加入购物车</button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Main products section
-const Products = () => {
   return (
     <section className="products">
       <div className="container">
         <h2 className="section-title">热销产品</h2>
         <p className="products-subtitle">
-          我们精选的尼泊尔传统珍品大合集，每一件都是精挑细选的2个月现货珍藏版手工艺
+          我们精选的尼泊尔传统珍品大合集，每一件都是精挑细选的手工艺精品
         </p>
 
         <div className="products-grid">
-          {productsData.map((product, index) => (
-            <ProductCard key={index} product={product} />
-          ))}
+      {hotProducts.map((product, index) => (
+        <div className="product-card" key={index}>
+          <Link to={`/product/${product.id}`}> {/* Optional: dynamic route */}
+            <div className="product-image-wrapper">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="product-image"
+              />
+              {product.hot && <span className="hot-badge">🔥 热销</span>}
+            </div>
+            <div className="product-info">
+              <h3 className="product-name">{product.name}</h3>
+              <p className="product-desc">{product.desc}</p>
+              <div className="product-price-action">
+                <span className="price">{product.price}</span>
+                <button className="add-to-cart">🛒 加入购物车</button>
+              </div>
+            </div>
+          </Link>
         </div>
+      ))}
+    </div>
 
         <div className="view-more">
           <button className="view-more-btn">查看全部产品</button>
@@ -78,4 +67,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Product;
