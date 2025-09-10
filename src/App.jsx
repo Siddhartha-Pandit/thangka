@@ -6,19 +6,19 @@ import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 
 // Pages
-import HeroPage from "./components/HeroPage.jsx";
-import ProductPage from "./components/ProductPage.jsx";
-import AdminAddProduct from "./components/Admin.jsx";
+import HeroPage from "./page/HeroPage.jsx";
+import ProductPage from "./page/ProductPage.jsx";
+import AdminAddProduct from "./page/Admin.jsx";
 
 // Optional Sections (can be used inside HeroPage or other pages)
 import Hero from "./components/Hero.jsx";
 import Categories from "./components/Categories.jsx";
-import Product from "./components/Product.jsx";
+import Product from "./page/Product.jsx";
 import Story from "./components/Story.jsx";
 import CategorySelector from "./components/CategorySection.jsx";
-import CulturalExchange from "./components/CulturalExchange.jsx";
-import CartPage from "./components/CartPage.jsx";
-import CheckoutPage from "./components/CheckoutPage.jsx";
+import CulturalExchange from "./page/CulturalExchange.jsx";
+import CartPage from "./page/CartPage.jsx";
+import CheckoutPage from "./page/CheckoutPage.jsx";
 
 export default function App() {
   return (

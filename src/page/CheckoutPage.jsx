@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./checkout.css";
+import "../assets/css/checkout.css";
 
 const initialCartItems = [
   {

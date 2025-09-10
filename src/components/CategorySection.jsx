@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CategorySelector.css";
+import "../assets/css/CategorySelector.css";
 
 const categories = {
   Thangka: ["Mandala", "Figure"],

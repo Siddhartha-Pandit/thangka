@@ -1,0 +1,176 @@
+/* story.css - styles for Story.jsx */
+
+/* Theme variables (aligns with hero/navbar/categories) */
+:root {
+  --max-width: 1200px;
+  --side-padding: 1.25rem;
+
+  /* Colors */
+  --accent: #c41e3a;
+  --accent-700: #a01729;
+  --bg-dark: #4C0C0C;
+  --card-bg: #731414;
+  --muted-white: #d1d1d1;
+  --text-on-dark: #fcfcfc;
+  --gold: #FFD700;
+  --shadow-sm: 0 6px 18px rgba(0,0,0,0.12);
+  --radius: 12px;
+  --glass: rgba(255,255,255,0.02);
+}
+
+/* Section wrapper */
+.story {
+  background-color: var(--bg-dark);
+  color: var(--muted-white);
+  padding: 4rem var(--side-padding);
+}
+
+/* Center container */
+.story-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Image column */
+.story-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.story-image img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: inline-block;
+  object-fit: cover;
+}
+
+.story-image img:hover,
+.story-image img:focus {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+}
+
+/* Content column */
+.story-content {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Decorative icon */
+.story-icon {
+  font-size: 2.5rem;
+  color: var(--gold);
+  width: fit-content;
+}
+
+/* Title */
+.story-title {
+  font-size: clamp(1.6rem, 3.2vw, 2rem);
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0;
+  line-height: 1.15;
+}
+
+/* Paragraphs */
+.story-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-on-dark);
+  margin: 0;
+}
+
+/* Stats container */
+.stats {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+/* Individual stat */
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(115,20,20,0.95), rgba(115,20,20,0.98));
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  min-width: 120px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat:hover,
+.stat:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.18);
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-on-dark);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.82);
+  margin-top: 0.25rem;
+}
+
+/* Make layout tighter on medium screens */
+@media (max-width: 1024px) {
+  .story-container { gap: 2rem; }
+  .story-image img { max-width: 420px; }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .story {
+    padding: 3rem var(--side-padding);
+  }
+  .story-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .story-image, .story-content {
+    flex: 1 1 100%;
+  }
+  .story-content { align-items: center; }
+  .stats { justify-content: center; gap: 0.9rem; }
+  .stat { min-width: 100px; padding: 0.75rem 1rem; }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .story {
+    padding: 2.5rem 0.9rem;
+  }
+  .story-title { font-size: 1.4rem; }
+  .story-text { font-size: 0.95rem; }
+  .stat-number { font-size: 1.25rem; }
+  .stat-label { font-size: 0.82rem; }
+  .story-image img { max-width: 320px; }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .story-image img,
+  .stat,
+  .product-card {
+    transition: none !important;
+  }
+}

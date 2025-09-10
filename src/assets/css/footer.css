@@ -1,0 +1,222 @@
+/* =========================
+ Footer (paste into app.css or as footer.css)
+========================= */
+
+/* local theme variables (won't break if you already have :root vars) */
+:root {
+  --footer-bg: #8b1538;       /* deep red */
+  --footer-bg-dark: #701232;  /* darker shade */
+  --footer-text: #fff;
+  --footer-muted: #e0e0e0;
+  --footer-accent: #FFD700;   /* gold */
+  --footer-shadow: 0 8px 30px rgba(0,0,0,0.18);
+  --footer-radius: 8px;
+  --container-max: 1200px;
+  --side-padding: 1.25rem;
+  --bp-md: 768px;
+}
+
+/* Main footer wrapper */
+footer.footer {
+  background: linear-gradient(180deg, var(--footer-bg) 0%, var(--footer-bg-dark) 100%);
+  color: var(--footer-text);
+  font-family: "Arial", sans-serif;
+  margin-top: 2.5rem;
+  box-shadow: var(--footer-shadow);
+}
+
+/* inner container aligns with other sections */
+.footer-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 3rem var(--side-padding);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+/* each column */
+.footer-section {
+  flex: 1 1 220px;
+  min-width: 200px;
+}
+
+/* Brand area */
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  color: var(--footer-text);
+  letter-spacing: 0.2px;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--footer-muted);
+}
+
+/* Titles inside footer */
+.footer-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: var(--footer-accent);
+}
+
+/* Links and contact lists */
+.footer-links,
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li,
+.footer-contact li {
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--footer-text);
+}
+
+.footer-links a {
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: var(--footer-accent);
+  text-decoration: underline;
+}
+
+/* Social icons row */
+.footer-social {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  color: var(--footer-text);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+
+.footer-social a:hover,
+.footer-social a:focus {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.12);
+  color: var(--footer-accent);
+}
+
+/* bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+}
+
+/* =========================
+ Optional Footer Contact Form
+ (Add a <form class="footer-form"> inside a footer-section)
+========================= */
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.3rem;
+}
+
+.footer-form input[type="text"],
+.footer-form input[type="email"],
+.footer-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: var(--footer-text);
+  font-size: 0.95rem;
+  resize: vertical;
+  min-height: 40px;
+  transition: box-shadow 0.15s ease, transform 0.12s ease;
+}
+
+.footer-form textarea {
+  min-height: 110px;
+}
+
+.footer-form input:focus,
+.footer-form textarea:focus {
+  outline: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25), 0 0 0 3px rgba(255,215,0,0.06);
+  transform: translateY(-2px);
+}
+
+/* footer form submit */
+.footer-form .btn {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(180deg, #c41e3a 0%, #a01729 100%);
+  color: #fff;
+  font-weight: 700;
+  align-self: flex-start;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.footer-form .btn:hover,
+.footer-form .btn:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(160,20,41,0.22);
+}
+
+/* =========================
+ Responsive
+========================= */
+@media (max-width: var(--bp-md)) {
+  .footer-container {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 2rem var(--side-padding);
+  }
+
+  .footer-section {
+    min-width: 100%;
+  }
+
+  .footer-social {
+    justify-content: flex-start;
+  }
+
+  .footer-form .btn {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    font-size: 0.86rem;
+  }
+}
+
+/* tiny screens */
+@media (max-width: 420px) {
+  .footer-container { padding: 1.25rem; }
+  .footer-logo { font-size: 1.25rem; }
+  .footer-text { font-size: 0.92rem; }
+}

@@ -1,7 +1,7 @@
 // src/components/Categories.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import "../assets/css/categories.css"
 // ===== Dummy Products Data =====
 export const allProducts = [
   // 唐卡

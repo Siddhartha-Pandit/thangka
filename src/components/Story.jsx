@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "../assets/css/story.css"
 
 const statsData = [
   { number: '30+', label: '艺术家与工' },

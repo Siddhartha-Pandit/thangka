@@ -101,7 +101,7 @@ html {
     background:
         linear-gradient(to bottom, rgba(255, 0, 0, 0.25) 0%, rgba(255, 0, 0, 0) 20%),
         linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
-        url("./images/heroimage.jpg");
+        url("./images/heroimg.png");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -177,7 +177,7 @@ html {
 ========================= */
 .categories {
     padding: 3rem 1rem;
-    background: #8b1538;
+    background: #ebca9c;
 }
 
 .categories h2 {

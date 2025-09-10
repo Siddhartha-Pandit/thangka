@@ -1,0 +1,278 @@
+/* navbar.css - responsive navbar for Navbar.jsx */
+
+/* Theme / colors (keeps parity with hero.css) */
+:root {
+  --nav-height: 72px;
+  --bg-opaque: rgba(132, 2, 2, 0.95);
+  --bg-translucent: rgba(132, 2, 2, 0.9);
+  --accent: #c41e3a;
+  --accent-dark: #a01729;
+  --text-on-dark: #ffffff;
+  --muted-white: rgba(255,255,255,0.92);
+  --gold: #FFD700;
+  --glass-blur: 8px;
+  --nav-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  --mobile-break: 768px;
+}
+
+/* Reset for nav elements inside this file */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  z-index: 1100;
+  transition: background 0.25s ease, backdrop-filter 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  background: var(--bg-translucent);
+  backdrop-filter: blur(var(--glass-blur));
+  box-shadow: none;
+}
+
+/* Optional scrolled state (toggle with JS when page scrolls) */
+.navbar.scrolled {
+  background: var(--bg-opaque);
+  box-shadow: var(--nav-shadow);
+  transform: translateY(0);
+}
+
+/* Nav inner container */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Logo */
+.logo {
+  color: var(--text-on-dark);
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  user-select: none;
+}
+
+/* Desktop menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.25rem;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-menu li {
+  display: block;
+}
+
+.nav-menu a {
+  color: var(--text-on-dark);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.25rem;
+  transition: color 0.18s ease, transform 0.18s ease;
+  display: inline-block;
+}
+
+/* hover / active */
+.nav-menu a:hover,
+.nav-menu a:focus {
+  color: var(--gold);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.nav-menu a.active {
+  color: var(--gold);
+  position: relative;
+}
+
+/* small underline for active */
+.nav-menu a.active::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 28px;
+  background: var(--gold);
+  border-radius: 3px;
+  margin-top: 6px;
+}
+
+/* Icons on the right */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--text-on-dark);
+  margin-left: 1rem;
+  font-size: 1.05rem;
+}
+
+/* clickable icon */
+.nav-icons span {
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 8px;
+  transition: background 0.15s ease, transform 0.12s ease;
+}
+
+.nav-icons span:hover,
+.nav-icons span:focus {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* Hamburger - hidden on desktop */
+.hamburger {
+  display: none;
+  width: 36px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+/* lines */
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background: var(--text-on-dark);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+/* mobile menu overlay - hidden on desktop */
+.mobile-menu {
+  display: none;
+}
+
+/* ---- Responsive rules ---- */
+@media (max-width: 1024px) {
+  .nav-container { padding: 0 1rem; }
+  .nav-menu { gap: 1rem; }
+}
+
+/* Mobile/tablet: collapse into hamburger */
+@media (max-width: var(--mobile-break)) {
+  .nav-menu,
+  .nav-icons {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /*
+    When the navbar has `.open` class (toggle with JS),
+    show mobile menu as a full-screen dropdown overlay.
+  */
+  .navbar.open {
+    /* keep the navbar visible on top */
+  }
+
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(18,7,7,0.96), rgba(12,4,4,0.98));
+    backdrop-filter: blur(6px);
+    padding: 2rem 1.25rem;
+    z-index: 1050;
+    transform: translateY(-6px);
+    animation: slideDown 0.25s ease both;
+    overflow-y: auto;
+  }
+
+  .mobile-menu .mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .mobile-menu a {
+    color: var(--muted-white);
+    text-decoration: none;
+    font-size: 1.05rem;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    display: block;
+    transition: background 0.16s ease, transform 0.12s ease;
+  }
+
+  .mobile-menu a:hover,
+  .mobile-menu a:focus {
+    background: rgba(255,255,255,0.03);
+    transform: translateX(4px);
+    color: var(--gold);
+  }
+
+  .mobile-menu .mobile-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .mobile-menu .mobile-actions {
+    margin-top: 1.25rem;
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  /* Slide down animation */
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Hamburger transformation when navbar has .open */
+.navbar.open .hamburger span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.navbar.open .hamburger span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.navbar.open .hamburger span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Accessibility: keyboard focus */
+.navbar a:focus,
+.navbar button:focus,
+.navbar span:focus {
+  outline: 3px solid rgba(255,215,0,0.12);
+  outline-offset: 3px;
+}
+
+/* Tiny screens adjust */
+@media (max-width: 420px) {
+  :root { --nav-height: 64px; }
+  .logo { font-size: 1rem; }
+  .mobile-menu a { font-size: 1rem; padding: 0.75rem 0.9rem; }
+}

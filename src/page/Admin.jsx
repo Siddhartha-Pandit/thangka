@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Admin.css"
+import "../assets/css/admin.css"
 
 export default function AdminAddProduct() {
   const [formData, setFormData] = useState({

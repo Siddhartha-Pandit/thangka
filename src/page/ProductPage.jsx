@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ProductPage.css"; // Make sure this path is correct
+import "../assets/css/ProductPage.css"; // Make sure this path is correct
 
 export default function ProductPage() {
   const [quantity, setQuantity] = useState(1);
