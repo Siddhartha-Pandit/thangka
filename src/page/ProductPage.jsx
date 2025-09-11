@@ -101,14 +101,14 @@ export default function ProductPage() {
         <div className="products-grid">
           {/* Example related product cards */}
           {images.slice(0, 4).map((img, i) => ( // Using slice to show a few examples
-            <div className="product-card" key={i}>
+            <div className="product-suggestion" key={i}>
               <div className="product-image-wrapper"> {/* Wrapper for positioning add-btn */}
                 <img src={img} alt={`Related Product ${i + 1}`} className="product-image" />
                 <button className="add-btn"><Plus /></button> {/* Add button for quick add */}
               </div>
               <div className="product-details">
                 <div className="product-name">Thangka {i + 1}</div>
-                <div className="product-price">$149.99</div>
+                <div className="product-detail-price">$149.99</div>
               </div>
             </div>
           ))}

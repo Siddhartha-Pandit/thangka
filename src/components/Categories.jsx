@@ -178,7 +178,7 @@ function Categories() {
             <div className="product-info">
                 <h3 className="product-name">{product.name}</h3>
                 <p className="product-desc">{product.desc}</p>
-                <div className="product-price">{product.price}</div>
+                <div className="product-cat-price">{product.price}</div>
                 <div className="product-actions">
                     <button 
                         className="add-to-cart-btn"
