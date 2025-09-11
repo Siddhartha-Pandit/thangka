@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Globe, Search, ShoppingCart } from "lucide-react";
 import "..//assets/css/navbar.css"; // Ensure this path is correct in your project
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { href: "#home", label: "首页" },
@@ -82,7 +83,7 @@ const Navbar = () => {
     <>
       <nav className={navClass} role="navigation" aria-label="Main navigation">
         <div className="nav-container">
-          <div className="logo">🏠 尼泊尔珍宝</div>
+          <Link to="/"><div className="logo">🏠 尼泊尔珍宝</div></Link>
 
           <ul className="nav-menu">
             {navLinks.map((l) => (
@@ -100,7 +101,9 @@ const Navbar = () => {
               <Search size={20} />
             </span>
             <span title="Cart">
-              <ShoppingCart size={20} />
+              <Link to="/cart">
+                <ShoppingCart size={20} />
+              </Link>
             </span>
           </div>
 

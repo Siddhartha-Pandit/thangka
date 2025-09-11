@@ -24,7 +24,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
 }
-
+a{
+  text-decoration: none;
+  color: #ffffff;
+}
 .demo-content {
   padding-top: var(--nav-height);
   min-height: 300vh;
