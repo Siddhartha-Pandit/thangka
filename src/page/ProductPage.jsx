@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../assets/css/ProductPage.css"; // Make sure this path is correct
-
+import {ShoppingCart,Star,Sparkles,Truck,Plus} from "lucide-react"
 export default function ProductPage() {
   const [quantity, setQuantity] = useState(1);
   const [frame, setFrame] = useState("framed"); // Default to 'framed'
@@ -76,20 +76,20 @@ export default function ProductPage() {
 
           {/* Action Buttons */}
           <div className="action-buttons">
-            <button className="add-to-cart">🛒 Add to Cart</button>
-            <button className="buy-now">💨 Buy Now</button>
+            <button className="add-to-cart"><ShoppingCart /> Add to Cart</button>
+            <button className="buy-now">Buy Now</button>
           </div>
 
           {/* Product Benefits Section (example) */}
           <div className="benefits">
             <div className="benefit">
-              <span className="info-icon">⭐</span> Authentic
+              <span className="info-icon"><Star /></span> Authentic
             </div>
             <div className="benefit">
-              <span className="info-icon">✨</span> Handcrafted
+              <span className="info-icon"><Sparkles /></span> Handcrafted
             </div>
             <div className="benefit">
-              <span className="info-icon">🎁</span> Free Shipping
+              <span className="info-icon"><Truck /></span> Free Shipping
             </div>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function ProductPage() {
             <div className="product-card" key={i}>
               <div className="product-image-wrapper"> {/* Wrapper for positioning add-btn */}
                 <img src={img} alt={`Related Product ${i + 1}`} className="product-image" />
-                <button className="add-btn">➕</button> {/* Add button for quick add */}
+                <button className="add-btn"><Plus /></button> {/* Add button for quick add */}
               </div>
               <div className="product-details">
                 <div className="product-name">Thangka {i + 1}</div>

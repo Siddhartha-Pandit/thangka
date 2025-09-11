@@ -8,13 +8,14 @@
 }
 
 
-
 .product-page {
-  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   margin: auto;
   margin-top:62px;
   padding: 20px;
-  background-color: #8b1538;
+  background-color: #fafafa;
 }
 
 .main-content {
@@ -80,7 +81,7 @@
 
 .price {
   font-size: 20px;
-  color: var(--accent-gold); /* Accent color for price */
+  color: #333333; /* Accent color for price */
   margin-bottom: 5px;
 }
 
@@ -101,7 +102,7 @@
   border-radius: 20px;
   background: transparent; /* Transparent background */
   cursor: pointer;
-  color: var(--text-color-light);
+  color: #333333;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -151,7 +152,7 @@
 }
 
 .stock-info {
-  color: var(--accent-gold); /* Accent color for stock info */
+  color: #515151; /* Accent color for stock info */
   font-size: 14px;
 }
 
@@ -218,7 +219,7 @@
   font-size: 22px;
   margin-right: 5px;
   display: inline-block;
-  color: var(--accent-gold); /* Accent color for icons */
+  color: var(--primary-dark); /* Accent color for icons */
 }
 
 .learn-more {
@@ -234,7 +235,7 @@
 
 /* --- Related Products --- */
 .related-products {
-  background: var(--primary-dark);
+  background: #fafafa;
   padding: 20px;
   border-radius: 12px;
 }
@@ -242,7 +243,7 @@
 .section-title {
   font-size: 20px;
   margin-bottom: 15px;
-  color: var(--text-color-light);
+  color: var(--primary-dark);
 }
 
 .products-grid {
@@ -304,18 +305,18 @@
 
 .product-price {
   font-weight: bold;
-  color: var(--secondary-dark); /* Secondary dark color for prices */
+  color: #333333; /* Secondary dark color for prices */
 }
 
 .view-all {
   display: inline-block;
   margin-top: 15px;
-  color: var(--accent-gold); /* Accent color for view all link */
+  color: var(--primary-dark); /* Accent color for view all link */
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .view-all:hover {
-  color: #e6c300;
+  color: var(--secondary-dark);
 }

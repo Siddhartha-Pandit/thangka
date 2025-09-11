@@ -176,7 +176,7 @@ body {
 
 .product-price {
     font-size: 1.4rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: #840202;
     margin-bottom: 15px;
 }
