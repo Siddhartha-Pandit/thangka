@@ -25,7 +25,7 @@ const initialCartData = [
   }
 ];
 
-const CartPage = () => {
+export default function CartPage() {
   const [cartData, setCartData] = useState(initialCartData);
 
   const handleQuantityChange = (id, delta) => {
@@ -45,47 +45,83 @@ const CartPage = () => {
   const subtotal = cartData.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
-    <div className="cart-container">
-      <div className="cart-items">
-        <h2 style={{ color: "#fff", textAlign: "center", marginBottom: "24px" }}>我的购物车</h2>
-        {cartData.map(item => (
-          <div key={item.id} className="cart-item">
-            <img src={item.img} alt={item.name} />
-            <div className="cart-item-details">
-              <h3>{item.name}</h3>
-              <p>单价: ¥{item.price.toFixed(2)}</p>
-            </div>
-            <div className="cart-item-controls">
-              <div className="quantity-controls">
-                <button onClick={() => handleQuantityChange(item.id, -1)}>-</button>
-                <span>{item.quantity}</span>
-                <button onClick={() => handleQuantityChange(item.id, 1)}>+</button>
-              </div>
-              <button className="delete-btn" onClick={() => handleDelete(item.id)}>删除</button>
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className="cart-page">
+      <header className="cart-header">
+        <h1>我的购物车</h1>
+        <p className="cart-desc">在这里查看并编辑您的订单 — 我们支持简体中文界面。</p>
+      </header>
 
-      <div className="order-summary">
-        <h3>订单总览</h3>
-        <div className="summary-item">
-          <span>小计</span>
-          <span>¥{subtotal.toFixed(2)}</span>
-        </div>
-        <div className="summary-item">
-          <span>运费</span>
-          <span>¥0.00</span>
-        </div>
-        <div className="summary-item total">
-          <span>总计</span>
-          <span>¥{subtotal.toFixed(2)}</span>
-        </div>
-        <button className="checkout-btn">结算</button>
-        <button className="continue-btn">继续购物</button>
-      </div>
+      <main className="cart-grid">
+        <section className="cart-list">
+          {cartData.length === 0 ? (
+            <div className="empty-state">
+              <p>购物车为空，去逛逛吧！</p>
+              <button className="btn-outline">继续购物</button>
+            </div>
+          ) : (
+            cartData.map(item => (
+              <article key={item.id} className="cart-card">
+                <div className="card-media">
+                  <img src={item.img} alt={item.name} />
+                </div>
+                <div className="card-body">
+                  <h2 className="item-name">{item.name}</h2>
+                  <p className="item-price">单价：<span className="price">¥{item.price.toFixed(2)}</span></p>
+
+                  <div className="controls-row">
+                    <div className="quantity">
+                      <button
+                        aria-label="减少数量"
+                        onClick={() => handleQuantityChange(item.id, -1)}
+                        className="qty-btn"
+                      >
+                       - 
+                      </button>
+                      <span className="qty-val">{item.quantity}</span>
+                      <button
+                        aria-label="增加数量"
+                        onClick={() => handleQuantityChange(item.id, 1)}
+                        className="qty-btn"
+                      >
+                        +
+                      </button>
+                    </div>
+
+                    <div className="card-actions">
+                      <button className="btn-text" onClick={() => handleDelete(item.id)}>删除</button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))
+          )}
+        </section>
+
+        <aside className="order-summary">
+          <h3>订单总览</h3>
+          <div className="summary-row">
+            <span>小计</span>
+            <strong>¥{subtotal.toFixed(2)}</strong>
+          </div>
+
+          <div className="summary-row muted">
+            <span>运费</span>
+            <span>¥0.00</span>
+          </div>
+
+          <div className="summary-row total">
+            <span>总计</span>
+            <strong>¥{subtotal.toFixed(2)}</strong>
+          </div>
+
+          <button className="btn-primary">结算</button>
+          <button className="btn-outline">继续购物</button>
+
+          <p className="note">安全支付 · 30天无忧退货 · 客服：support@example.com</p>
+        </aside>
+      </main>
+
+      
     </div>
   );
-};
-
-export default CartPage;
+}
